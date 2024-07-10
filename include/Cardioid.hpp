@@ -5,6 +5,9 @@
 class Cardioid{
     private: 
         sf::CircleShape mainCircle;
+        sf::Color pointsColor = sf::Color::Red;
+        sf::Color originColor = sf::Color::Green; 
+        sf::Color lineColor = sf::Color::Red;
         int factor = 2;
         int base = 10;
         std::vector<sf::CircleShape> points;
@@ -24,22 +27,7 @@ class Cardioid{
         void setBase(int newBase){
             if(newBase < 2) return; 
             base = newBase; 
-            points.clear(); 
-            lines.clear(); 
-            float radius = mainCircle.getRadius(); 
-            float arcLength = 2 * M_PI * radius / base; 
-            float theta = M_PI;
-            for(int i = 0; i < base; i++){
-                float x = radius * cos(theta);
-                float y = radius * sin(theta); 
-                points.push_back(sf::CircleShape());
-                points[i].setRadius(radius / 20);
-                points[i].setOrigin(sf::Vector2f(points[i].getRadius(), points[i].getRadius()));
-                points[i].setPosition(sf::Vector2f(x, y));
-                points[i].setFillColor(sf::Color::Red);
-                theta += (arcLength / radius); 
-            }
-            points[0].setFillColor(sf::Color::Green); 
+            setPoints(M_PI);
         }
         void setPoints(float theta){
             points.clear();
@@ -53,10 +41,10 @@ class Cardioid{
                 points[i].setRadius(radius / 20);
                 points[i].setOrigin(sf::Vector2f(points[i].getRadius(), points[i].getRadius()));
                 points[i].setPosition(sf::Vector2f(x, y));
-                points[i].setFillColor(sf::Color::Red); 
+                points[i].setFillColor(pointsColor); 
                 theta += (arcLength / radius);
             };
-            points[0].setFillColor(sf::Color::Green);
+            points[0].setFillColor(originColor);
         }
         int getBase(){
             return base; 
@@ -69,10 +57,10 @@ class Cardioid{
             if(num <= 0 || num >= base || num > points.size()) return;  
             sf::VertexArray line(sf::Lines, 2);
             line[0].position = points[num].getPosition();
-            line[0].color = sf::Color::Red;
+            line[0].color = lineColor;
             int index = (num * factor) % base; 
             line[1].position = points[index].getPosition();
-            line[1].color = sf::Color::Red;
+            line[1].color = lineColor;
             lines.push_back(line);
         }
 };
