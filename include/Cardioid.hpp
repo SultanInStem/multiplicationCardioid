@@ -7,7 +7,7 @@ class Cardioid{
         sf::Color pointsColor = sf::Color::Red;
         sf::Color originColor = sf::Color::Green; 
         sf::Color lineColor = sf::Color::Red;
-        int factor = 3;
+        int factor = 2;
         int base = 10;
         float originAngle = (-3* M_PI) / 2;
         std::vector<sf::CircleShape> points;
