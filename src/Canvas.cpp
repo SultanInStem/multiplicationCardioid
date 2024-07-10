@@ -4,7 +4,8 @@
 
 int COUNT = 0;
 
-Canvas::Canvas(int width, int height) : cardioid(150){
+Canvas::Canvas(int width, int height) : cardioid(200){
+    cardioid.setBase(20);
     sf::ContextSettings settings; 
     settings.antialiasingLevel = 20; 
     window.create(sf::VideoMode(width, height), "Carioid", sf::Style::Titlebar | sf::Style::Close, settings);
@@ -25,7 +26,10 @@ void Canvas::handleEvents(){
     }
 }
 void Canvas::update(){
-    // carioid.multiply();
+    if(COUNT < cardioid.getBase()){
+        cardioid.multiply(COUNT);
+        COUNT++;
+    }
 }
 
 void Canvas::render(){
