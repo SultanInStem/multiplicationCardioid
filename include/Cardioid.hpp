@@ -41,6 +41,23 @@ class Cardioid{
             }
             points[0].setFillColor(sf::Color::Green); 
         }
+        void setPoints(float theta){
+            points.clear();
+            lines.clear();
+            float radius = mainCircle.getRadius(); 
+            float arcLength = 2 * M_PI * radius / base; 
+            for(int i = 0; i < base; i++){
+                float x = radius * cos(theta); 
+                float y = radius * sin(theta); 
+                points.push_back(sf::CircleShape());
+                points[i].setRadius(radius / 20);
+                points[i].setOrigin(sf::Vector2f(points[i].getRadius(), points[i].getRadius()));
+                points[i].setPosition(sf::Vector2f(x, y));
+                points[i].setFillColor(sf::Color::Red); 
+                theta += (arcLength / radius);
+            };
+            points[0].setFillColor(sf::Color::Green);
+        }
         int getBase(){
             return base; 
         }
