@@ -4,7 +4,7 @@
 
 int COUNT = 0;
 
-Canvas::Canvas(int width, int height) : cardioid(200){
+Canvas::Canvas(int width, int height) : cardioid(250){
     cardioid.setBase(200);
     sf::ContextSettings settings; 
     settings.antialiasingLevel = 20; 
