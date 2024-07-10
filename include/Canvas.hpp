@@ -1,7 +1,7 @@
-#include <SFML/Graphics.hpp> 
-#include "Cardioid.hpp"
 #ifndef CANVAS_HPP 
 #define CANVAS_HPP 
+#include "Cardioid.hpp"
+#include <SFML/Graphics.hpp> 
 class Canvas{ 
     public: 
         Canvas(int width, int height);

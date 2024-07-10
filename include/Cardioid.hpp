@@ -1,7 +1,6 @@
-#include <SFML/Graphics.hpp>
-
 #ifndef CARDIOID_HPP 
 #define CARDIOID_HPP 
+#include <SFML/Graphics.hpp>
 class Cardioid{
     private: 
         sf::CircleShape mainCircle;
