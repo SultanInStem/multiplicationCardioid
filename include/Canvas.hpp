@@ -8,6 +8,7 @@ class Canvas{
         void run(); 
     private:
         sf::RenderWindow window; 
+        sf::View view; 
         void handleEvents(); 
         void update(); 
         void render(); 

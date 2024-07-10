@@ -5,8 +5,9 @@
 class Cardioid{
     private: 
         sf::CircleShape mainCircle;
+        float factor = 2;
     public: 
-        Cardioid();
+        Cardioid(float radius);
         ~Cardioid();
 };
 #endif

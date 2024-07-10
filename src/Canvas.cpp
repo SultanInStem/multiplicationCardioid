@@ -6,6 +6,9 @@ Canvas::Canvas(int width, int height){
     settings.antialiasingLevel = 15; 
     window.create(sf::VideoMode(width, height), "Carioid", sf::Style::Titlebar | sf::Style::Close, settings);
     window.setFramerateLimit(60);  
+    view.setSize(sf::Vector2f(window.getSize().x, window.getSize().y));
+    view.setCenter(sf::Vector2f(0,0));
+    window.setView(view); 
 }
 
 Canvas::~Canvas(){};
