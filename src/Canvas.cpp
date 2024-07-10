@@ -1,6 +1,9 @@
 #include "Canvas.hpp"
 #include <SFML/Graphics.hpp>
 
+
+int COUNT = 0;
+
 Canvas::Canvas(int width, int height) : cardioid(150){
     sf::ContextSettings settings; 
     settings.antialiasingLevel = 20; 
@@ -22,7 +25,7 @@ void Canvas::handleEvents(){
     }
 }
 void Canvas::update(){
-
+    // carioid.multiply();
 }
 
 void Canvas::render(){

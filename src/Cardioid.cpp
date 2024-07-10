@@ -13,14 +13,13 @@ Cardioid::Cardioid(float radius){
         float x = radius * cos(theta); 
         float y = radius * sin(theta); 
         points.push_back(sf::CircleShape());
-        points[i].setRadius(5);
-        points[i].setOrigin(sf::Vector2f(5,5));
+        points[i].setRadius(radius / 20);
+        points[i].setOrigin(sf::Vector2f(points[i].getRadius(), points[i].getRadius()));
         points[i].setPosition(sf::Vector2f(x, y));
         points[i].setFillColor(sf::Color::Red); 
-        theta -= (arcLength / radius);
-    }
+        theta += (arcLength / radius);
+    };
+    points[0].setFillColor(sf::Color::Green);
 }; 
 
-Cardioid::~Cardioid(){
-
-}
+Cardioid::~Cardioid(){};

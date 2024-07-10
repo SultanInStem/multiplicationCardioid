@@ -8,6 +8,7 @@ class Cardioid{
         float factor = 2;
         int base = 10;
         std::vector<sf::CircleShape> points;
+        std::vector<sf::VertexArray> lines;
     public: 
         Cardioid(float radius);
         ~Cardioid();
@@ -20,6 +21,14 @@ class Cardioid{
         void setBase(int newBase){
             if(newBase < 2) return; 
             base = newBase; 
+        }
+        void setFactor(int newFactor){
+            if(newFactor < 2) return; 
+            factor = newFactor; 
+        }
+        void multiply(int num){
+            if(num < 0 || num >= base || num > points.size()) return;  
+            // points[num]
         }
 };
 #endif
