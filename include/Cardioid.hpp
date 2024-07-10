@@ -10,6 +10,7 @@ class Cardioid{
         sf::Color lineColor = sf::Color::Red;
         int factor = 2;
         int base = 10;
+        float originAngle = M_PI;
         std::vector<sf::CircleShape> points;
         std::vector<sf::VertexArray> lines;
     public: 
@@ -38,7 +39,7 @@ class Cardioid{
                 float x = radius * cos(theta); 
                 float y = radius * sin(theta); 
                 points.push_back(sf::CircleShape());
-                points[i].setRadius(radius / 20);
+                points[i].setRadius(1);
                 points[i].setOrigin(sf::Vector2f(points[i].getRadius(), points[i].getRadius()));
                 points[i].setPosition(sf::Vector2f(x, y));
                 points[i].setFillColor(pointsColor); 

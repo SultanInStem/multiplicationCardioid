@@ -5,11 +5,11 @@
 int COUNT = 0;
 
 Canvas::Canvas(int width, int height) : cardioid(200){
-    cardioid.setBase(20);
+    cardioid.setBase(200);
     sf::ContextSettings settings; 
     settings.antialiasingLevel = 20; 
     window.create(sf::VideoMode(width, height), "Carioid", sf::Style::Titlebar | sf::Style::Close, settings);
-    window.setFramerateLimit(60);  
+    window.setFramerateLimit(30);  
     view.setSize(sf::Vector2f(window.getSize().x, window.getSize().y));
     view.setCenter(sf::Vector2f(0,0));
     window.setView(view); 
