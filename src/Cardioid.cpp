@@ -7,7 +7,8 @@ Cardioid::Cardioid(float radius){
     mainCircle.setFillColor(sf::Color::Transparent);
     mainCircle.setOutlineThickness(2);
     mainCircle.setPointCount(100); 
-    setPoints(M_PI);
+    originAngle = (-3 * M_PI) / 2; 
+    setPoints();
 }; 
 
 Cardioid::~Cardioid(){};
