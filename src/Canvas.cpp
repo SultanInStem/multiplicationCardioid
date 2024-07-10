@@ -1,9 +1,9 @@
 #include "Canvas.hpp"
 #include <SFML/Graphics.hpp>
 
-Canvas::Canvas(int width, int height){
+Canvas::Canvas(int width, int height) : cardioid(150){
     sf::ContextSettings settings; 
-    settings.antialiasingLevel = 15; 
+    settings.antialiasingLevel = 20; 
     window.create(sf::VideoMode(width, height), "Carioid", sf::Style::Titlebar | sf::Style::Close, settings);
     window.setFramerateLimit(60);  
     view.setSize(sf::Vector2f(window.getSize().x, window.getSize().y));
@@ -27,6 +27,7 @@ void Canvas::update(){
 
 void Canvas::render(){
     window.clear(); 
+    cardioid.show(window);
     window.display();
 }
 
